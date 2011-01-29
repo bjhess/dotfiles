@@ -1,0 +1,106 @@
+# General
+alias l='ls -l'
+alias la='ls -al'
+alias h='history'
+alias c='clear'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ~='cd ~'
+alias ebash='mate ~/Code/dotfiles/ &'
+alias rbash='source ~/.bash_profile'                    # Reload aliases
+alias rdns='dscacheutil -flushcache'                    # Flush DNS cache
+alias checkcache='du -hk ~/Library/Caches/ | sort -n'   # List out large cache files/directories for deletion
+alias aliases='more ~/.dotfiles/bash/aliases'
+alias updot='cd ~/.dotfiles;git pull;rbash'
+
+# Rebuild context menu for Open With
+alias lsrebuild='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+# Ruby
+alias watch="watchr ~/.watchr/rails.rb"  # default is Rails cause that's my most frequent workspace
+alias go="gem open $1 -c mate"
+
+# Rails
+alias rs="script/rails server"
+alias rsd="script/rails server --debugger"
+alias rc='ruby script/console'
+alias rc='script/rails console'
+alias rcs='ruby script/console --sandbox'
+alias rcs='script/rails console --sandbox'
+alias mm="memcached -vv"
+alias mem="/usr/local/bin/memcached"  # start memcached
+alias migrate="rake db:migrate db:test:clone_structure"
+alias cap22='cap _2.2.0_'  # For old Harvest deployment
+
+# Sinatra
+alias ss="shotgun config.ru -p 4567"
+
+# Git
+alias gb="git branch"
+alias gba="git branch -a"
+# gbs - Git branches sorted
+alias gbs="for i in `git branch | cut -c '3-'`; do echo `git log --pretty="format:%ct %cd" -1 $i | xargs printf "%50s"` $i; done | sort -n | cut -d\  -f2-"
+alias gco="git checkout"     # add branch name to checkout
+alias gcob="git checkout -b" # add branch name to create local branch and checkout
+alias gm="git merge"         # add branch name to merge into current
+alias gc="git commit -v"
+alias gca="git commit -v -a"
+alias gcm="git commit -v -m"
+alias gcam="git commit -v -a -m"
+alias gcu="git reset --soft HEAD^"  # Undo last commit
+alias gd="git diff | gitx"
+# alias gd="git diff | mate"
+alias gl="git pull"
+alias gp="git push"
+alias glp="git pull; git push;"
+alias gst="git status"
+alias gt="git tag"
+alias gtp="git push origin"
+# Delete remote branch ($2) at remote repo ($1)
+gdr(){ git push $1 :heads/$2; }
+# Checkout a remote branch given just it's root name
+gcor(){ git branch --track $1 origin/$1; gco $1; }  # add remote root branch name to the end
+# Create a new remote branch. Then checkout with remote branch tracking.
+gcobr(){ git branch $1; git push origin $1; git branch -D $1; gcor $1; }
+
+# Heroku
+alias hd="gp; gp heroku master;"
+alias hdm="gp; gp heroku master; heroku rake db:migrate; heroku restart;"
+
+# MySQL
+alias mysqlstop="sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist"
+alias mysqlstart="sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist"
+
+# MongoDB
+alias mongostart="mongod run --config /usr/local/Cellar/mongodb/1.4.3-x86_64/mongod.conf"
+# Automatically load on login
+# cp /usr/local/Cellar/mongodb/1.4.3-x86_64/org.mongodb.mongod.plist ~/Library/LaunchAgents
+# launchctl load -w ~/Library/LaunchAgents/org.mongodb.mongod.plist
+
+# Site specific
+alias iri="cd ~/Sites/iridesco/"
+alias ha="iri; cd harvest"
+alias has="ha; rs;"
+alias c="iri; cd co-op"
+alias cs="c; rs -p 3001;"
+alias csd="c; rs --debugger -p 3001"
+alias k="iri; cd ellistapp"
+alias ks="k; rs -p 3002"
+alias ksd="k; rs --debugger -p 3002"
+alias s="cd ~/Sites/scorebooker/"
+alias ssd="s; rsd"
+alias scrawl="cd ~/Sites/scrawlers"
+alias scrawls="scrawl; rsd;"
+alias cwl="cd ~/Sites/cwlady"
+
+# Mac Mini
+# Now use SuperDuper
+#alias backmedia="rsync -aHxvpgtr --numeric-ids --delete --delete-excluded --progress /Volumes/Manuel/ /Volumes/Polly/"
+
+# Servers
+alias servers="more ~/.ssh/config"
+
+# Camera download
+alias pics="ruby ~/Documents/code/copypics.rb -vi /Volumes/CANON_DC/ /Volumes/homewrite/photos/family/full_quality/"
+alias picsiphone="ruby ~/Documents/code/copypics.rb -vi ~/Pictures/iPhone/ /Volumes/homewrite/photos/family/full_quality/"
+alias picsava="ruby ~/Documents/code/copypics.rb -vi /Volumes/Ava_Camera/ /Volumes/homewrite/photos/family/ava_camera/"

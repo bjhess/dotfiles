@@ -1,0 +1,12 @@
+#--all
+#
+#--ignore-dir=log 
+#--ignore-dir=db
+
+--type-add=ruby=.haml,.rake
+
+--type-set=sass=.sass
+--type-set=haml=.haml
+--type-set=selenium=.rsel
+--type-set=builder=.builder
+--type-set=xml=.rxml

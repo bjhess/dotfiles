@@ -1,0 +1,1 @@
+complete -W "$(echo `cat ~/.ssh/config | grep 'Host ' | uniq | awk '{print $2}'`;)" ssh

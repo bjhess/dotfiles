@@ -1,0 +1,32 @@
+[user]
+	name = Barry Hess
+	email = barry@bjhess.com
+[core]
+  excludesfile = ~/.gitignore
+[color]
+  ui = auto
+	diff = auto
+	status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[branch]
+	autosetupmerge = true
+[alias]
+	st = status
+	ci = commit
+  br = branch
+	co = checkout
+  df = diff
+  lg = log -p
+	amend = commit --amend

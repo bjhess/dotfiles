@@ -1,0 +1,7 @@
+source ~/.bash/completion_scripts/bash_completion
+source ~/.bash/completion_scripts/git_completion
+source ~/.bash/completion_scripts/ssh_completion
+complete -C ~/.bash/completion_scripts/rake_completion -o default rake
+complete -C ~/.bash/completion_scripts/project_completion -o default c
+complete -C ~/.bash/completion_scripts/capistrano_completion -o default cap
+complete -C "/usr/bin/gemedit --complete" gemedit
