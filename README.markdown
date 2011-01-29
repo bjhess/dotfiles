@@ -1,6 +1,6 @@
 # Barry Hess Dot Files
 
-My config files with heavy inspiration from [Err](http://errtheblog.com/posts/89-huba-huba), [Ryan Bates](http://github.com/ryanb/dotfiles/tree/master), and other various web luminaries.
+My config files with heavy inspiration from [Err](http://errtheblog.com/posts/89-huba-huba), [Ryan Bates](http://github.com/ryanb/dotfiles/tree/master), [Elijah Miller](https://github.com/jqr/dotfiles) and other various web luminaries.
 
 ### Installation
 
