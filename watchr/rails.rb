@@ -60,10 +60,6 @@ def related_test_files(path)
   Dir["#{test_or_spec}/**/*.rb"].select { |file| file =~ /#{File.basename(path).split(".").first}_#{test_or_spec}.rb/ }
 end
 
-# def related_spec_files(path)
-#   Dir['spec/**/*.rb'].select { |file| file =~ /#{File.basename(path).split(".").first}_spec.rb/ }
-# end
-
 def run_suite
   run_all_tests
   run_all_specs
