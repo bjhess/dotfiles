@@ -18,22 +18,27 @@ def run(cmd)
 end
 
 def run_test_file(file)
+  if file =~ /spec.rb$/
+    run_spec_file(file) 
+    return
+  end
+
   system('clear')
   result = run(%Q(ruby -I"lib:test" -rubygems #{file}))
   growl((result.split("\n").last rescue nil) + " in file: #{file}")
   puts result
 end
 
-def run_all_tests
+def run_spec_file(file)
   system('clear')
-  result = run "rake test"
+  result = run(%Q(ruby -I"lib:spec" -rubygems #{file}))
   growl result.split("\n").last rescue nil
   puts result
 end
 
-def run_spec_file(file)
+def run_all_tests
   system('clear')
-  result = run(%Q(ruby -I"lib:spec" -rubygems #{file}))
+  result = run "rake test"
   growl result.split("\n").last rescue nil
   puts result
 end
@@ -51,11 +56,8 @@ def run_all_features
 end
 
 def related_test_files(path)
-  Dir['test/**/*.rb'].select { |file| file =~ /#{File.basename(path).split(".").first}_test.rb/ }
-end
-
-def related_spec_files(path)
-  Dir['spec/**/*.rb'].select { |file| file =~ /#{File.basename(path).split(".").first}_spec.rb/ }
+  test_or_spec = Dir['test'].size == 1 ? 'test' : 'spec'
+  Dir["#{test_or_spec}/**/*.rb"].select { |file| file =~ /#{File.basename(path).split(".").first}_#{test_or_spec}.rb/ }
 end
 
 def run_suite
@@ -66,10 +68,9 @@ end
 
 watch('test/test_helper\.rb') { run_all_tests }
 watch('test/.*/.*_test\.rb') { |m| run_test_file(m[0]) }
-watch('app/.*/.*\.rb') { |m| related_test_files(m[0]).map {|tf| run_test_file(tf) } }
 watch('spec/spec_helper\.rb') { run_all_specs }
-watch('spec/.*/.*_spec\.rb') { |m| run_spec_file(m[0]) }
-watch('app/.*/.*\.rb') { |m| related_spec_files(m[0]).map {|tf| run_spec_file(tf) } }
+watch('spec/.*/.*_spec\.rb') { |m| run_test_file(m[0]) }
+watch('app/.*/.*\.rb') { |m| related_test_files(m[0]).map {|tf| run_test_file(tf) } }
 watch('features/.*/.*\.feature') { run_all_features }
 
 # Ctrl-\
