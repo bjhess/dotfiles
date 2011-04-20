@@ -4,6 +4,7 @@
 #--ignore-dir=db
 
 --type-add=ruby=.haml,.rake
+--type-add=css=.scss
 
 --type-set=sass=.sass
 --type-set=haml=.haml
