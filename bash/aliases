@@ -16,6 +16,10 @@ alias updot='cd ~/.dotfiles;git pull;rbash'
 # Rebuild context menu for Open With
 alias lsrebuild='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user'
 
+# Pow http://pow.cx/manual.html
+alias rpow="touch tmp/restart.txt"
+alias powlog="tail -f ~/Library/Logs/Pow/apps/harvest.log"
+
 # Ruby
 alias watch="watchr ~/.watchr/rails.rb"  # default is Rails cause that's my most frequent workspace
 alias go="gem open $1 -c mate"
