@@ -19,6 +19,7 @@ alias lsrebuild='/System/Library/Frameworks/CoreServices.framework/Versions/A/Fr
 # Pow http://pow.cx/manual.html
 alias rpow="touch tmp/restart.txt"
 alias powlog="tail -f ~/Library/Logs/Pow/apps/harvest.log"
+alias uppow="curl get.pow.cx | sh"
 
 # Ruby
 alias watch="watchr ~/.watchr/rails.rb"  # default is Rails cause that's my most frequent workspace
