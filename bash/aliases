@@ -36,6 +36,7 @@ alias mm="memcached -vv"
 alias mem="/usr/local/bin/memcached"  # start memcached
 alias migrate="rake db:migrate db:test:clone_structure"
 alias cap22='cap _2.2.0_'  # For old Harvest deployment
+alias cdiff='cap production deploy:pending:diff'
 alias rd="rdebug -c"
 
 # Sinatra
