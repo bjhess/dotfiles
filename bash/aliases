@@ -50,6 +50,7 @@ alias gbs="for i in `git branch | cut -c '3-'`; do echo `git log --pretty="forma
 alias gco="git checkout"     # add branch name to checkout
 alias gcob="git checkout -b" # add branch name to create local branch and checkout
 alias gm="git merge"         # add branch name to merge into current
+alias gap="git add -p"       # select diff hunks for commit - even partial files
 alias gc="git commit -v"
 alias gca="git commit -v -a"
 alias gcm="git commit -v -m"
