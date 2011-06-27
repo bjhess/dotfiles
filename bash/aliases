@@ -66,6 +66,7 @@ alias gst="git status"
 alias gt="git tag"
 alias gtp="git push origin"
 alias gclean="git clean -fd"  # Kill all files that you haven't added to git
+alias gcancelmerge="git reset --hard HEAD"  # For my own benefit
 # Delete remote branch ($2) at remote repo ($1)
 gdr(){ git push $1 :heads/$2; }
 # Checkout a remote branch given just it's root name
