@@ -48,7 +48,8 @@ alias gba="git branch -a"
 # gbs - Git branches sorted
 alias gbs="for i in `git branch | cut -c '3-'`; do echo `git log --pretty="format:%ct %cd" -1 $i | xargs printf "%50s"` $i; done | sort -n | cut -d\  -f2-"
 alias gbd="git branch -D "
-gbdr(){ git push origin :$1; }
+# Delete remote branch ($2) at remote repo ($1)
+gbdr(){ git push $1 :heads/$2; }
 alias gco="git checkout"     # add branch name to checkout
 alias gcob="git checkout -b" # add branch name to create local branch and checkout
 alias gm="git merge"         # add branch name to merge into current
