@@ -47,6 +47,8 @@ alias gb="git branch"
 alias gba="git branch -a"
 # gbs - Git branches sorted
 alias gbs="for i in `git branch | cut -c '3-'`; do echo `git log --pretty="format:%ct %cd" -1 $i | xargs printf "%50s"` $i; done | sort -n | cut -d\  -f2-"
+alias gbd="git branch -D "
+gbdr(){ git push origin :$1; }
 alias gco="git checkout"     # add branch name to checkout
 alias gcob="git checkout -b" # add branch name to create local branch and checkout
 alias gm="git merge"         # add branch name to merge into current
@@ -67,8 +69,6 @@ alias gt="git tag"
 alias gtp="git push origin"
 alias gclean="git clean -fd"  # Kill all files that you haven't added to git
 alias gcancelmerge="git reset --hard HEAD"  # For my own benefit
-# Delete remote branch ($2) at remote repo ($1)
-gdr(){ git push $1 :heads/$2; }
 # Checkout a remote branch given just it's root name
 gcor(){ git branch --track $1 origin/$1; gco $1; }  # add remote root branch name to the end
 # Create a new remote branch. Then checkout with remote branch tracking.
