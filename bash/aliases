@@ -38,7 +38,6 @@ alias migrate="rake db:migrate db:test:clone_structure"
 alias cap22='cap _2.2.0_'  # For old Harvest deployment
 alias cdiff='cap production deploy:pending:diff'
 alias rd="rdebug -c"
-alias bi="bundle install --binstubs=.bin"
 
 # Sinatra
 alias ss="shotgun config.ru -p 4567"
