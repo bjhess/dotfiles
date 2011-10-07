@@ -38,6 +38,7 @@ alias migrate="rake db:migrate db:test:clone_structure"
 alias cap22='cap _2.2.0_'  # For old Harvest deployment
 alias cdiff='cap production deploy:pending:diff'
 alias rd="rdebug -c"
+alias bi="bundle install --binstubs=.bin"
 
 # Sinatra
 alias ss="shotgun config.ru -p 4567"
@@ -49,9 +50,11 @@ alias gba="git branch -a"
 alias gbs="for i in `git branch | cut -c '3-'`; do echo `git log --pretty="format:%ct %cd" -1 $i | xargs printf "%50s"` $i; done | sort -n | cut -d\  -f2-"
 alias gbd="git branch -D "
 gbdr(){ git push origin :$1; }
+gbda(){ gbd $1; gbdr $1; }
 alias gco="git checkout"     # add branch name to checkout
 alias gcob="git checkout -b" # add branch name to create local branch and checkout
 alias gm="git merge"         # add branch name to merge into current
+alias gmnff="git merge --no-ff"  # add branch name to merge into current
 alias gap="git add -p"       # select diff hunks for commit - even partial files
 alias gc="git commit -v"
 alias gca="git commit -v -a"
@@ -63,6 +66,7 @@ alias gd="git diff"
 # alias gd="git diff | mate"
 alias gl="git pull"
 alias gp="git push"
+alias gpo="git push origin"  # add branch name to push
 alias glp="git pull; git push;"
 alias gst="git status"
 alias gt="git tag"
@@ -72,7 +76,8 @@ alias gcancelmerge="git reset --hard HEAD"  # For my own benefit
 # Checkout a remote branch given just it's root name
 gcor(){ git branch --track $1 origin/$1; gco $1; }  # add remote root branch name to the end
 # Create a new remote branch. Then checkout with remote branch tracking.
-gcobr(){ git branch $1; git push origin $1; git branch -D $1; gcor $1; }
+# gcobr(){ git branch $1; git push origin $1; git branch -D $1; gcor $1; }
+gcobr(){ git branch $1; git push origin $1; }
 
 # Heroku
 alias hd="gp; gp heroku master;"
