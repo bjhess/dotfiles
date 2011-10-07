@@ -5,6 +5,7 @@
 
 --type-add=ruby=.haml,.rake
 --type-add=css=.scss
+--type-add=css=.less
 
 --type-set=sass=.sass
 --type-set=haml=.haml
