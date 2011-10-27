@@ -24,7 +24,12 @@ def run_test_file(file)
   end
 
   system('clear')
-  result = run(%Q(ruby -I"lib:test" -rubygems #{file}))
+  result = if `ps ax|grep -i /spork|grep -iv grep|wc -l`.to_i > 0
+    run %Q(bundle exec testdrb #{file})
+  else
+    run %Q(bundle exec testrb -I lib:app:test #{file})
+  end
+
   growl((result.split("\n").last rescue nil) + " in file: #{file}")
   puts result
 end
