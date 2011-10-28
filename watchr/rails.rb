@@ -1,11 +1,15 @@
 ENV["WATCHR"] = "1"
 system 'clear'
 
-def growl(result)
+def growl(result, options={})
   growlnotify = `which growlnotify`.chomp
   title = "Watchr Test Results"
+
   split_result = result.split('\n')
   message = "#{split_result[-2]} #{split_result[-1]}" rescue nil
+  message = "#{options[:prepend]} #{message}" if options[:prepend]
+  message = "#{message} #{options[:append]}" if options[:append]
+
   puts message
   image = (message.include?('0 failures, 0 errors') || message.match(/examples?,\s0\s(errors|failures)/)) ? 
             "~/.watchr_images/passed.png" : 
@@ -32,28 +36,28 @@ def run_test_file(file)
     run %Q(bundle exec testrb -I lib:app:test #{file})
   end
 
-  growl(result) + " in file: #{file}")
+  growl(result, :append => " in file: #{file}")
   puts result
 end
 
 def run_spec_file(file)
   system('clear')
   result = run(%Q(ruby -I"lib:spec" -rubygems #{file}))
-  growl result
+  growl result.split("\n").last rescue nil
   puts result
 end
 
 def run_all_tests
   system('clear')
   result = run "rake test"
-  growl result
+  growl result.split("\n").last rescue nil
   puts result
 end
 
 def run_all_specs
   system('clear')
   result = run "rake spec"
-  growl result
+  growl result.split("\n").last rescue nil
   puts result
 end
 
