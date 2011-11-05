@@ -80,8 +80,8 @@ gcor(){ git branch --track $1 origin/$1; gco $1; }  # add remote root branch nam
 gcobr(){ git branch $1; git push origin $1; }
 
 # Heroku
-alias hd="gp heroku master;"
-alias hdm="gp heroku master; heroku rake db:migrate; heroku restart;"
+alias hd="git push heroku master;"
+alias hdm="git push heroku master; heroku rake db:migrate; heroku restart;"
 
 # MySQL
 alias mysqlstop="sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist"
