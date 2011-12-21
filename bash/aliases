@@ -55,6 +55,11 @@ alias gco="git checkout"     # add branch name to checkout
 alias gcob="git checkout -b" # add branch name to create local branch and checkout
 alias gm="git merge"         # add branch name to merge into current
 alias gmnff="git merge --no-ff"  # add branch name to merge into current
+# resolve merge conflicts with filemerge
+# http://blog.tom-haynes.com/2010/03/using-filemerge-with-git/
+alias gmergetool="git mergetool -t opendiff"
+# side by side diff
+alias gside="git difftool -t opendiff"
 alias gap="git add -p"       # select diff hunks for commit - even partial files
 alias gc="git commit -v"
 alias gca="git commit -v -a"
