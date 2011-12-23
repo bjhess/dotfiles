@@ -41,6 +41,7 @@ alias rd="rdebug -c"
 alias bi="bundle install --binstubs=.bin"
 
 # Sinatra
+alias sc="irb -r ./main.rb"
 alias ss="shotgun config.ru -p 4567"
 
 # Git
