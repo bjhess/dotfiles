@@ -5,7 +5,7 @@ parse_git_branch() {
 PS1="\w\$(parse_git_branch) $ "
 
 export EDITOR="/usr/bin/nano"
-export BUNDLER_EDITOR=mate
+export BUNDLER_EDITOR=subl
 # export VISUAL="mate"
 
 # Force Rails3 to provide full backtraces in test output
