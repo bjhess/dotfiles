@@ -31,9 +31,9 @@ def run_test_file(file)
 
   system('clear')
   result = if `ps ax|grep -i /spork|grep -iv grep|wc -l`.to_i > 0
-    run %Q(bundle exec testdrb #{file})
+    run %Q(bundle exec testdrb ./#{file})
   else
-    run %Q(bundle exec testrb -I lib:app:test #{file})
+    run %Q(bundle exec testrb -I lib:app:test ./#{file})
   end
 
   growl(result, :append => "in file: #{file}")
@@ -42,7 +42,7 @@ end
 
 def run_spec_file(file)
   system('clear')
-  result = run(%Q(ruby -I"lib:spec" -rubygems #{file}))
+  result = run(%Q(ruby -I"lib:spec" -rubygems ./#{file}))
   growl result
   puts result
 end
