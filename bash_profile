@@ -17,6 +17,3 @@ export RUBY_HEAP_MIN_SLOTS=600000
 export RUBY_HEAP_SLOTS_INCREMENT=300000
 export RUBY_GC_MALLOC_LIMIT=50000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-
-# For rvm. Apparently the above RUBYOPT bit might interfere
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
