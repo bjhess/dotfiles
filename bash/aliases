@@ -84,7 +84,7 @@ gcor(){ git branch --track $1 origin/$1; gco $1; }  # add remote root branch nam
 # Create a new remote branch. Then checkout with remote branch tracking.
 # gcobr(){ git branch $1; git push origin $1; git branch -D $1; gcor $1; }
 # gcobr(){ git branch $1; git push origin $1; }
-gcobr(){ git push origin master:$1; git branch --track $1 origin/$1; }
+gcobr(){ git push origin master:$1; git branch --track $1 origin/$1; gco $1; }
 
 # Heroku
 alias hd="git push heroku master;"
