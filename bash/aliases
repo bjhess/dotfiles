@@ -12,6 +12,7 @@ alias rdns='dscacheutil -flushcache'                    # Flush DNS cache
 alias checkcache='du -hk ~/Library/Caches/ | sort -n'   # List out large cache files/directories for deletion
 alias aliases='more ~/.dotfiles/bash/aliases'
 alias updot='cd ~/.dotfiles;git pull;rbash'
+alias curljson="curl $1 | python -mjson.tool"
 
 # Rebuild context menu for Open With
 alias lsrebuild='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain system -domain user'
