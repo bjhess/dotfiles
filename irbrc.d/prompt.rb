@@ -3,7 +3,7 @@ def setup_custom_irb_prompt(name)
   red   = "\e[31m"
   blue  = "\e[30m"
   clear = "\e[0m"
-  
+
   IRB.conf[:PROMPT][:CUSTOM] = {
     # Flag  Description
     # %N    Current command.
@@ -23,4 +23,4 @@ def setup_custom_irb_prompt(name)
   IRB.conf[:PROMPT_MODE] = :CUSTOM
 end
 
-setup_custom_irb_prompt('irb')
+# setup_custom_irb_prompt('irb')
