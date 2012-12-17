@@ -2,7 +2,7 @@ source ~/.bash/aliases
 source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
- 
+
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
@@ -19,3 +19,4 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
 eval "$(rbenv init -)"
+eval "$($HOME/.8/bin/8 init -)"
