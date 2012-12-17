@@ -5,3 +5,5 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:
 export PATH="$PATH:./.bin"
 
 export NODEPATH="/usr/local/lib/node_modules"
+
+eval "$($HOME/.8/bin/8 init -)"
