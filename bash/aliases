@@ -40,6 +40,7 @@ alias cap22='cap _2.2.0_'  # For old Harvest deployment
 alias cdiff='cap production deploy:pending:diff'
 alias rd="rdebug -c"
 alias bi="bundle install --binstubs=.bin; rbenv rehash"
+alias be="bundle execute"
 
 # Sinatra
 alias sc="irb -r ./main.rb"
