@@ -72,6 +72,7 @@ alias gcu="git reset --soft HEAD^"  # Undo last commit
 alias gd="git diff"
 # alias gd="git diff | gitx"
 # alias gd="git diff | mate"
+alias gdt="git difftool"
 alias gl="git pull"
 # alias gp="git push"
 alias gpo="git push origin"  # add branch name to push
