@@ -106,6 +106,7 @@ alias mongostart="mongod run --config /usr/local/Cellar/mongodb/1.4.3-x86_64/mon
 # Site specific
 alias iri="cd ~/Sites/iridesco/"
 alias ha="iri; cd harvestapp"
+alias ha2="iri; cd harvestapp2"
 alias has="ha; rs;"
 alias c="iri; cd co-op"
 alias cs="c; rs -p 3001;"
