@@ -1,4 +1,4 @@
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/texbin/:~/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/texbin/:~/bin:/usr/local/heroku/bin:$PATH"
 
 # Enable binstubs in PATH for less bundle exec. There are security concerns, but I'm ignoring for now:
 #   http://opensoul.org/blog/archives/2011/09/14/bundle-exec-fatigue/
