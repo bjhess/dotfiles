@@ -11,8 +11,8 @@ def growl(result, options={})
   message = "#{options[:prepend]} #{message}" if options[:prepend]
   message = "#{message} #{options[:append]}" if options[:append]
 
-  image = (message.include?('0 failures, 0 errors') || message.match(/examples?,\s0\s(errors|failures)/)) ? 
-            "~/.watchr_images/passed.png" : 
+  image = (message.include?('0 failures, 0 errors') || message.match(/examples?,\s0\s(errors|failures)/)) ?
+            "~/.watchr_images/passed.png" :
             "~/.watchr_images/failed.png"
   options = "-w -n Watchr --image '#{File.expand_path(image)}' -m '#{message}' '#{title}'"
   system %(#{growlnotify} #{options} &)
@@ -25,7 +25,7 @@ end
 
 def run_test_file(file)
   if file =~ /spec.rb$/
-    run_spec_file(file) 
+    run_spec_file(file)
     return
   end
 
@@ -33,7 +33,7 @@ def run_test_file(file)
   result = if `ps ax|grep -i /spork|grep -iv grep|wc -l`.to_i > 0
     run %Q(bundle exec testdrb ./#{file})
   else
-    run %Q(bundle exec testrb -I lib:app:test ./#{file})
+    run %Q(bundle exec ruby ./#{file})
   end
 
   growl(result, :append => "in file: #{file}")
