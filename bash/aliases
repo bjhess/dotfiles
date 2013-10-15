@@ -88,6 +88,12 @@ gcor(){ git branch --track $1 origin/$1; gco $1; }  # add remote root branch nam
 # gcobr(){ git branch $1; git push origin $1; git branch -D $1; gcor $1; }
 # gcobr(){ git branch $1; git push origin $1; }
 gcobr(){ source_branch=master; git push origin ${2-source_branch}:$1; git branch --track $1 origin/$1; gco $1; }
+# From https://gist.github.com/hartym/2584767
+gstashgrep() {
+  for i in `git stash list --format="%gd"`; do
+    git stash show -p $i | grep -H --label="$i" "$1"
+  done
+}
 
 # Heroku
 alias hd="git push heroku master;"
