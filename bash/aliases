@@ -94,6 +94,7 @@ gstashgrep() {
     git stash show -p $i | grep -H --label="$i" "$1"
   done
 }
+alias gsearch="git log -S" # "some string"
 
 # Heroku
 alias hd="git push heroku master;"
