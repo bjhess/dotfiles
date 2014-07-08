@@ -12,8 +12,8 @@ RUBYOPT="rubygems -Ilib:test"
 export RUBYOPT
 
 # Ruby tweakin'
-export RUBY_HEAP_MIN_SLOTS=800000
-export RUBY_FREE_MIN=100000
+export RUBY_GC_HEAP_INIT_SLOTS=800000
+export RUBY_GC_HEAP_FREE_SLOTS=100000
 export RUBY_GC_MALLOC_LIMIT=79000000
 
 # Custom Harvest tweakage
