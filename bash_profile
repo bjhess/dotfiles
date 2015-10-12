@@ -12,9 +12,11 @@ RUBYOPT="rubygems -Ilib:test"
 export RUBYOPT
 
 # Ruby tweakin'
-export RUBY_GC_HEAP_INIT_SLOTS=800000
-export RUBY_GC_HEAP_FREE_SLOTS=100000
-export RUBY_GC_MALLOC_LIMIT=79000000
+export RUBY_HEAP_FREE_MIN=100000
+export RUBY_GC_HEAP_INIT_SLOTS=600000
+export RUBY_HEAP_SLOTS_INCREMENT=300000
+export RUBY_GC_MALLOC_LIMIT=50000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 
 # Custom Harvest tweakage
 # export RUN_GC_EVERY=7   # Disabling because slow MacBook Air
