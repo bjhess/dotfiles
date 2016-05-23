@@ -8,6 +8,7 @@ alias ...='cd ../..'
 alias ~='cd ~'
 alias ebash='subl -n ~/Code/dotfiles/ &'
 alias rbash='source ~/.bash_profile'                    # Reload aliases
+alias rcam='sudo killall VDCAssistant; sudo killall AppleCameraAssistant' # Reload external camera
 alias rdns='dscacheutil -flushcache'                    # Flush DNS cache
 alias checkcache='du -hk ~/Library/Caches/ | sort -n'   # List out large cache files/directories for deletion
 alias aliases='more ~/.dotfiles/bash/aliases'
