@@ -1,6 +1,8 @@
 [user]
 	name = Barry Hess
 	email = barry@bjhess.com
+[github]
+        user = bjhess
 [core]
   excludesfile = ~/.gitignore
 [color]
