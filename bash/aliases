@@ -1,3 +1,6 @@
+# So much help with commands!
+# https://github.com/herrbischoff/awesome-osx-command-line#wiping-data
+
 # General
 alias l='ls -l'
 alias la='ls -al'
